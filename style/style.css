@@ -176,3 +176,30 @@ footer p {
     width: 100%;
     display: none;
 }
+
+/*  Модальные окна */
+#services .lp-tab .btn {
+    background: #7952b3;
+    border-color: transparent;
+}
+
+#services .lp-tab .btn:hover {
+    background: #60418e;
+}
+
+#services .lp-tab .btn:focus {
+    box-shadow: none;
+}
+
+.lp-modals {
+    display: none;
+}
+
+.lp-popup {
+    position: relative;
+    background: #FFF;
+    padding: 20px;
+    width: auto;
+    max-width: 500px;
+    margin: 20px auto;
+}
