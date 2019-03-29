@@ -203,3 +203,40 @@ footer p {
     max-width: 500px;
     margin: 20px auto;
 }
+
+/* Прайс-лист */
+
+#prices table th {
+    background: #7952b3;
+    color: #fff;
+    text-align: center;
+    -webkit-user-select: none;
+}
+
+#prices table th[ng-click] {
+    cursor: pointer;
+}
+
+#prices table td i {
+    color: red;
+}
+
+#prices .lp-prices-loader {
+    text-align: center;
+}
+
+#prices .lp-prices-loader i {
+    display: inline-block;
+    font-size: 2em;
+    color: #ccc;
+    animation: spinner 1.5s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
