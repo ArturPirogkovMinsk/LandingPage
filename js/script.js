@@ -57,8 +57,15 @@
         $(window).on('load scroll', lpSetNavActive); // И каждый раз при скролле
 
 
+        /* Слайдеры */
         $(".lp-slider1").owlCarousel({
             items: 1,
+            nav: true,
+            navText: ['<i class="fas fa-arrow-left"></i>', '<i class="fas fa-arrow-right"></i>']
+        });
+
+        $('.lp-slider2').owlCarousel({
+            items: 3,
             nav: true,
             navText: ['<i class="fas fa-arrow-left"></i>', '<i class="fas fa-arrow-right"></i>']
         });
@@ -163,6 +170,16 @@
             type: 'inline'
         });
 
+        $('.lp-gallery').each(function () {
+            $(this).magnificPopup({
+                type: 'image',
+                delegate: 'a',
+                gallery: {
+                    enabled: true
+                }
+            });
+        });
+
         /* Формы обратной связи */
         $('#lp-fb1').wiFeedBack({
             fbScript: 'blocks/wi-feedback.php',
@@ -176,6 +193,33 @@
             fbColor: '#337ab7'
         });
 
-        
+        /* Карта */
+
+        $.fn.lpMapInit = function () {
+
+            var lpMapOption = {
+                center: [53.906522, 27.510232],
+                zoom: 16,
+                controls: ['zoomControl', 'fullscreenControl']
+            }
+
+            if (window.innerWidth < 768) {
+                lpMapOption.behaviors = ['multiTouch']
+            } else {
+                lpMapOption.behaviors = ['drag']
+            }
+
+            var lpMap = new ymaps.Map('lp-map', lpMapOption);
+
+            var lpPlacemark = new ymaps.Placemark(lpMapOption.center, {
+                hintContent: 'ИТ Академия',
+                balloonContentHeader: 'ИТ Академия',
+                balloonContentBody: 'учебные курсы',
+                balloonContentFooter: 'пер. 4-й Загородный, 56А'
+            });
+
+            lpMap.geoObjects.add(lpPlacemark);
+        }
+
     });
 })(jQuery);
