@@ -170,6 +170,12 @@
             fbColor: '#337ab7'
         });
 
+        $('#lp-fb2').wiFeedBack({
+            fbScript: 'blocks/wi-feedback.php',
+            fbLink: false,
+            fbColor: '#337ab7'
+        });
+
         
     });
 })(jQuery);
