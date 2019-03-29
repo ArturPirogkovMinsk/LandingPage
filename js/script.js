@@ -95,6 +95,9 @@
             tabsContentTabs.eq(0).addClass('active').show();
             // Устанавливаем высоту div с содержимым вкладок равной высоте первой вкладки
             tabsContent.height(tabsContent.find('.active').outerHeight());
+
+            tabs.append('<div class="lp-tabs-footer">Active tab: ' + tabsTitlesNames[0] + ' (1/' + tabsTitlesNames.length + ')</div>');
+
             // По клику на заголовке вкладки
             tabsTitlesItems.on('click', function () {
                 // Проверяем, не находится ли табулятор в переходном состоянии
@@ -141,10 +144,11 @@
                             // Добавляем класс "active" следующей (уже текущей) вкладке
                             nextTab.addClass('active');
                             // Выводим табулятор из переходного состояния
-                            tabs.removeClass('changing');
+                            tabs.removeClass('changing');                            
                         });
                     });
 
+                    tabs.find('.lp-tabs-footer').text('Active tab: ' + tabsTitlesNames[$(this).index()] + ' (' + ($(this).index() + 1) + '/' + tabsTitlesNames.length + ')');
                 }
             });
             // При изменении размера окна
@@ -152,6 +156,11 @@
                 // Устанавливаем высоту div с содержимым вкладок равной высоте активной вкладки
                 tabsContent.height(tabsContent.find('.active').outerHeight());
             });
+        });
+
+        /* Всплывающие окна */
+        $('.lp-mfp-inline').magnificPopup({
+            type: 'inline'
         });
 
     });
