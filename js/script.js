@@ -163,5 +163,13 @@
             type: 'inline'
         });
 
+        /* Формы обратной связи */
+        $('#lp-fb1').wiFeedBack({
+            fbScript: 'blocks/wi-feedback.php',
+            fbLink: '.lp-fb1-link',
+            fbColor: '#337ab7'
+        });
+
+        
     });
 })(jQuery);
