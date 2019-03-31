@@ -26,9 +26,11 @@
 <body>
     <header>
         <div class="container">
+                <img class="header-logo" src="img/logo_with_shadow.png" alt="logo"> 
             <ul>
-                <li><a href="#slideShow">slide show</a></li>
-                <li><a href="#services">services</a></li>
+                <li><a href="#about">о нас</a></li>
+                <li><a href="#services">наши услуги</a></li>
+                <li><a href="#team">наша команда</a></li>                
                 <li><a href="#portfolio">portfolio</a></li>
                 <li><a href="#prices">prices</a></li>
                 <li><a href="#contacts">contacts</a></li>
@@ -36,25 +38,64 @@
         </div>
     </header>
 
-
-    <section id="slideShow" data-offset="54">
-        <div class="container">
-            <div class="lp-content">
-                <div class="lp-slider1 owl-carousel">
-                    <img src="img/slide1.jpg" alt="service 1">
-                    <img src="img/slide2.jpg" alt="service 2">
-                    <img src="img/slide3.jpg" alt="service 3">
-                    <img src="img/slide1.jpg" alt="service 1">
-                    <img src="img/slide2.jpg" alt="service 2">
-                    <img src="img/slide3.jpg" alt="service 3">
+    <section id="about">
+        <div class="container">  
+            <div class="row">         
+                <div class="col-sm-6">      
+                    <h1 class="header-title">Ремонт квартир в Минске</h1>
+                    <img src="img/master-remont.png" alt="master">
                 </div>
-            </div>
+                <div class="col-sm-6">
+                    <div class="header-form">
+                        <div id="lp-fb2">
+                            <div class="form-title">Закажите <span>бесплатный</span> замер</div>
+                            <input type="text" maxlength="50" data-label="Имя" placeholder="Ваше Имя..." />
+                            <input type="tel" maxlength="50" data-label="Телефон" placeholder="Ваш Телефон..." required />
+                            <textarea maxlength="500" data-label="Сообщение" placeholder="Сообщение..."></textarea>
+                            <button>Оставить заявку</button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>
     </section>
     <section id="services" data-offset="44">
         <div class="container">
             <div class="lp-content">
-                <h2>services</h2>
+                <h2>наши услуги</h2>
+                <div class="lp-slider1 owl-carousel"><!--todo: change alt-->
+                    <div class="slide">
+                        <h4>Сантехнические работы</h4>
+                        <img src="img/services/raboti_santehnicheskie.jpg" alt="service 1">
+                    </div>
+                    <div class="slide">
+                        <h4>Штукатурные работы</h4>
+                        <img src="img/services/raboti_shtykatyrnie.jpg" alt="service 1">
+                    </div>
+                    <div class="slide">
+                        <h4>Укладка плитки</h4>
+                        <img src="img/services/ykladka_plitki.jpg" alt="service 1">
+                    </div>
+                    <div class="slide">
+                        <h4>Демонтажные работы</h4>
+                        <img src="img/services/demontazhnie_raboti.jpg" alt="service 1">
+                    </div>
+                    <div class="slide">
+                        <h4>Монтаж гипсокартона</h4>
+                        <img src="img/services/montazh_gipsokartona.jpg" alt="service 1">
+                    </div>
+                    <div class="slide">
+                        <h4>Электромонтажные работы</h4>
+                        <img src="img/services/raboti_electromontazhnie.jpg" alt="service 1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="team" data-offset="44">
+        <div class="container">
+            <div class="lp-content">
+                <h2>наша команда</h2>
                 <div class="lp-tabs">    
                     <div data-tab-title="Service 1">
                         <p class="text-center"><strong>Service 1</strong></p>

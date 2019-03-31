@@ -59,7 +59,8 @@
 
         /* Слайдеры */
         $(".lp-slider1").owlCarousel({
-            items: 1,
+            items: 3,
+            loop: true,
             nav: true,
             navText: ['<i class="fas fa-arrow-left"></i>', '<i class="fas fa-arrow-right"></i>']
         });
