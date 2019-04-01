@@ -290,3 +290,14 @@ footer p {
 .lp-slider1 h4 {
     text-align: center;
 }
+
+/*    Team     */
+#team img {
+    max-height: 200px;
+}
+
+/*    Portfolio     */
+#portfolio img {
+    max-height: 200px;
+    padding: 10px;
+}

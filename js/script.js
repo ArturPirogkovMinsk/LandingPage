@@ -194,12 +194,18 @@
             fbColor: '#337ab7'
         });
 
+        $('#lp-fb3').wiFeedBack({
+            fbScript: 'blocks/wi-feedback.php',
+            fbLink: false,
+            fbColor: '#337ab7'
+        });
+
         /* Карта */
 
         $.fn.lpMapInit = function () {
 
             var lpMapOption = {
-                center: [53.906522, 27.510232],
+                center: [53.861745, 27.458139],
                 zoom: 16,
                 controls: ['zoomControl', 'fullscreenControl']
             }
@@ -213,10 +219,10 @@
             var lpMap = new ymaps.Map('lp-map', lpMapOption);
 
             var lpPlacemark = new ymaps.Placemark(lpMapOption.center, {
-                hintContent: 'ИТ Академия',
-                balloonContentHeader: 'ИТ Академия',
-                balloonContentBody: 'учебные курсы',
-                balloonContentFooter: 'пер. 4-й Загородный, 56А'
+                hintContent: 'lider-remonta.by',
+                balloonContentHeader: 'lider-remonta.by',
+                balloonContentBody: 'admin@lider-remonta.by',
+                balloonContentFooter: '220117 Минск п-т Любимова, дом 19'
             });
 
             lpMap.geoObjects.add(lpPlacemark);
