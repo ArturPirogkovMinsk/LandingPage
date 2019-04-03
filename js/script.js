@@ -1,6 +1,27 @@
 (function ($) {
     $(document).ready(function () {
 
+        /* Начальный экран при загрузке */
+        // Переменная, отражающая завершение перехода к стартовому экрану
+        var lpReady = false;
+        // Описываем функцию, которая скролит к экрану, имя которого есть в URL
+        function lpGoToActive() {
+            var lpPath = window.location.pathname.replace('/', ''),
+                lpTrgt;
+            if (lpPath != '') {
+                lpTrgt = $('#' + lpPath);
+                if (lpTrgt.length > 0) {
+                    $('body, html').scrollTop(lpTrgt.offset().top - 44);
+                }
+            }
+            setTimeout(function () {
+                lpReady = true;
+            }, 500);
+        }
+        // Вызываем эту функцию
+        lpGoToActive(); // При загрузке DOM
+        $(window).on('load', lpGoToActive); // При загрузке страницы
+
         /* Панель навигации */
         // Описываем функцию, которая
         function lpHeader() {
@@ -50,6 +71,12 @@
                 lpNav.find('li.active').removeClass('active');
                 // И добавляем класс active пункту, внутри которого лежит ссылка, у которой href совпал с ID активного экрана 
                 lpNav.find('li a[href="#' + curItem + '"]').parent().addClass('active');
+                // Задаем состояние
+                if (lpReady) {
+                    window.history.pushState({
+                        curItemName: curItem
+                    }, curItem, '/' + curItem);
+                }    
             }
         }
         // Вызываем эту функцию
