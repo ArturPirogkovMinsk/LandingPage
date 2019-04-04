@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin</title>
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-locale_ru-by.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/admin.js"></script>
+</head>
+<body ng-app="lpAdminApp" ng-controller="lpAdminCtrl">
+    <div class="container">
+        <p>
+            <span>Name</span>
+            <input ng-model="newName" type="text" class="form-control">
+            <span>Title</span>
+            <input ng-model="newTitle" type="text" class="form-control">
+            <span>Experience</span>
+            <input ng-model="newExperience" type="text" class="form-control">
+            <button class="btn btn-primary" ng-click="addItem(newName, newTitle, newExperience)">Add</button>
+        </p>
+        <p>
+            <span>Search:</span>
+            <input ng-model="teamSearch" type="text" class="form-control">
+            </p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>¹</th>
+                        <th ng-click="setOrder('name')">Name</th>
+                        <th ng-click="setOrder('title')">Title</th>
+                        <th>Experience</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="team in members | filter:teamSearch | orderBy:membersOrder:reverse" ng-class="{discount: team.discount, second: $odd}">
+                        <td>{{$index + 1}}</td>
+                        <td>{{team.name}}</td>
+                        <td>{{team.title}}</td>
+                        <td>{{team.experience}}</td>                        
+                        <td ng-click="deleteItem(team)">delete<i class="fas fa-trash-alt"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+</body>
+</html>
