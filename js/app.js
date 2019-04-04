@@ -1,5 +1,16 @@
 var lpApp = angular.module('lpApp', []);
 
+lpApp.controller('lpTeamCtrl', function ($scope, $http) {
+    
+    $http.get('team.json').then(function (res) {
+        $scope.members = res.data;        
+    }).catch(function (err) {
+        $scope.reqStatus = err.status;
+        $scope.reqStatusText = err.statusText;
+    });  
+});
+
+
 lpApp.controller('lpPriceCtrl', function ($scope, $http) {
     
     $http.get('price.json').then(function (res) {
@@ -36,3 +47,5 @@ lpApp.controller('lpPriceCtrl', function ($scope, $http) {
         });
     }
 });
+
+

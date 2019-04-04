@@ -23,7 +23,7 @@
     <script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&onload=jQuery.fn.lpMapInit" type="text/javascript"></script>
 </head>
 
-<body>
+<body ng-app="lpApp">
     <header>
         <div class="container">
                 <img class="header-logo" src="img/logo_with_shadow.png" alt="logo"> 
@@ -92,28 +92,16 @@
             </div>
         </div>
     </section>
-    <section id="team" data-offset="44">
+    <section id="team" ng-controller="lpTeamCtrl" data-offset="44">
         <div class="container">
             <div class="lp-content">
                 <h2>наша команда</h2>
-                <div class="row">
-                    <div class="col">
-                        <img src="\img\team\team_member_1.jpg" alt=""> <!--todo: move to json-->
-                        <p>Дмитрий Минич</p>
-                        <p>Основатель проекта</p>
-                        <p>Опыт работы 13 лет</p>
-                    </div>
-                    <div class="col">
-                        <img src="\img\team\sergej-volkov.jpg" alt="">
-                        <p>Сергей Волков</p>
-                        <p>Плиточник-отделочник</p>
-                        <p>Опыт работы 16 лет</p>
-                    </div>
-                    <div class="col">
-                        <img src="\img\team\valera-suprun.jpg" alt="">
-                        <p>Валера Супрун</p>
-                        <p>Сантехник</p>
-                        <p>Опыт работы 13 лет</p>
+                <div class="row" ng-show="members">
+                    <div class="col" ng-repeat="worker in members">
+                        <img ng-src="{{worker.img}}" alt="">
+                        <p>{{worker.name}}</p>
+                        <p>{{worker.title}}</p>
+                        <p>{{worker.experience}}</p>
                     </div>
                 </div> 
             </div>
@@ -146,7 +134,7 @@
             </div>
         </div>
     </section>
-    <section id="prices" ng-app="lpApp" ng-controller="lpPriceCtrl" data-offset="44">
+    <section id="prices" ng-controller="lpPriceCtrl" data-offset="44">
         <div class="container">
             <div class="lp-content">
                 <h2>цены</h2>

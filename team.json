@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Дмитрий Минич",
+        "title": "Основатель проекта",
+        "experience": "Опыт работы 16 лет",
+        "img": "\\img\\team\\team_member_1.jpg"
+    }, {
+        "name": "Сергей Волков",
+        "title": "Плиточник-отделочник",
+        "experience": "Опыт работы 16 лет",
+        "img": "\\img\\team\\sergej-volkov.jpg"
+    }, {
+        "name": "Валера Супрун",
+        "title": "Сантехник",
+        "experience": "Опыт работы 13 лет",
+        "img": "\\img\\team\\valera-suprun.jpg"
+    }
+]
